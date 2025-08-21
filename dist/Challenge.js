@@ -4,11 +4,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 class Challenge {
     primeirosPrimos(n) {
         let primes = [];
-        let a = 25;
-        let isPrime = true;
-        //enquanto o tamanho do array for menor que n
+        let a = 2;
         while (primes.length < n) {
-            //verifica se o número é primo
+            let isPrime = true;
             if (a % 2 == 0 && a !== 2) {
                 isPrime = false;
             }
@@ -17,8 +15,7 @@ class Challenge {
                     isPrime = false;
                 }
             }
-            //adiciona o número ao array
-            if (isPrime) {
+            if (isPrime == true) {
                 primes.push(a);
             }
             a++;

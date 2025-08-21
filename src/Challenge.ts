@@ -3,12 +3,11 @@
 export default class Challenge {
     public primeirosPrimos(n: number): number[] {
         let primes = [];
-        let a = 25;
-        let isPrime = true;
+        let a = 2;
         
-        //enquanto o tamanho do array for menor que n
         while (primes.length < n) {
-            //verifica se o número é primo
+            let isPrime = true;
+            
             if (a % 2 == 0 && a !== 2) {
                 isPrime = false;
             }
@@ -19,8 +18,7 @@ export default class Challenge {
                 }
             }
 
-            //adiciona o número ao array
-            if (isPrime) {
+            if (isPrime == true) {
                 primes.push(a);
             }
             a++;
