@@ -1,29 +1,28 @@
 "use strict";
 // Carlos Eduardo Goulart Oliveira e Nicolas Siqueira Moraes
-exports.__esModule = true;
-var Solo = /** @class */ (function () {
-    function Solo(n) {
+Object.defineProperty(exports, "__esModule", { value: true });
+class Solo {
+    constructor(n) {
         this.primes = [2];
         this.n = n;
     }
-    Solo.prototype.getSolo = function () {
+    getSolo() {
         this.primeirosPrimos(this.n);
-        var notesCicle = ['E', 'F#', 'G', 'A', 'B', 'C', 'D'];
-        var notes = ['E'];
-        var primeNote = 0;
-        for (var i = 0; i < this.n - 1; i++) {
+        let notesCicle = ['E', 'F#', 'G', 'A', 'B', 'C', 'D'];
+        let notes = ['E'];
+        let primeNote = 0;
+        for (let i = 0; i < this.n - 1; i++) {
             primeNote = (primeNote + this.primes[i]) % notesCicle.length;
-            console.log(primeNote);
             notes.push(notesCicle[primeNote]);
         }
         return notes;
-    };
-    Solo.prototype.primeirosPrimos = function (n) {
+    }
+    primeirosPrimos(n) {
         this.primes = [2];
-        var a = 3;
+        let a = 3;
         while (this.primes.length < n) {
-            var isPrime = true;
-            for (var i = 3; i <= Math.sqrt(a); i += 2) {
+            let isPrime = true;
+            for (let i = 3; i <= Math.sqrt(a); i += 2) {
                 if (a % i === 0) {
                     isPrime = false;
                     break;
@@ -35,9 +34,8 @@ var Solo = /** @class */ (function () {
             a += 2; // Testar somente os ímpares
         }
         return this.primes;
-    };
-    return Solo;
-}());
-exports["default"] = Solo;
-var test = new Solo(6);
+    }
+}
+exports.default = Solo;
+let test = new Solo(6);
 console.log('Wandinha Test: ', test.getSolo());

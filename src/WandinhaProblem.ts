@@ -16,7 +16,6 @@ export default class Solo {
 
     for (let i = 0; i < this.n - 1; i++) {
       primeNote = (primeNote + this.primes[i]) % notesCicle.length;
-      console.log(primeNote);
       notes.push(notesCicle[primeNote]);
     }
 
