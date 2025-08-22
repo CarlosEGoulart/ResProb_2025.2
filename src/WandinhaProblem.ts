@@ -15,7 +15,7 @@ export default class Solo {
     let primeNote = 0;
 
     for (let i = 0; i < this.n - 1; i++) {
-      primeNote = (primeNote + this.primes[i]) % notesCicle.length; //primeNote vai receber a nmta na posição do índice do numero primo (% length)
+      primeNote = (primeNote + this.primes[i]) % notesCicle.length; //primeNote vai receber a nota na posição do índice do numero primo (% length)
       notes.push(notesCicle[primeNote]);  //adiciona a nota na posição do índice do numero primo
     }                                     //exemplo: 3 primo = 5, 5 % 7 = 5, notesCicle[5] = C 
 
