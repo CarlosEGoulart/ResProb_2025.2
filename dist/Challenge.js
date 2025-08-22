@@ -3,14 +3,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class Challenge {
     primeirosPrimos(n) {
-        let primes = [];
+        let primes = [2];
         let a = 2;
         while (primes.length < n) {
             let isPrime = true;
-            if (a % 2 == 0 && a !== 2) {
+            if (a % 2 == 0) {
                 isPrime = false;
             }
-            for (let i = 3; i <= Math.sqrt(a); i++) {
+            for (let i = 3; i <= Math.sqrt(a); i += 2) {
                 if (a % i === 0) {
                     isPrime = false;
                 }
