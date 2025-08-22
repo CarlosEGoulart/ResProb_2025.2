@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/CarlosEGoulart/ResProb_2025.2#readme",
   "devDependencies": {
+    "prettier": "^3.6.2",
     "typescript": "^5.9.2"
   }
 }
