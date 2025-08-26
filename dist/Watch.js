@@ -26,6 +26,7 @@ class Watch {
                 dividors.push(j);
             }
         }
+        // Testa os outros numeros
         for (let i = 1; i < this.gears.length; i++) {
             for (let m = 0; m <= dividors.length; m++) {
                 if (this.gears[i] % dividors[m] === 0) {
