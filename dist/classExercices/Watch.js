@@ -13,6 +13,7 @@ class Watch {
         // Testa se forem par
         for (let k = 0; k < this.gears.length; k++) {
             if (this.gears[k] % 2 !== 0) {
+                let dividors = [];
                 isImpar = true;
                 break;
             }
@@ -20,7 +21,7 @@ class Watch {
         if (isImpar === false) {
             return false;
         }
-        //Adicionamos os primeiros divisores
+        // Adicionamos os primeiros divisores
         for (let j = 1; j <= this.gears[0]; j++) {
             if (this.gears[0] % j === 0) {
                 dividors.push(j);
