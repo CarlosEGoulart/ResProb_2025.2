@@ -20,7 +20,6 @@ export default class Recursivity {
         this.count(n - 1); //fica em um 'loop' até atender a condição base (n == 0),
         console.log(n)     //e o codigo segue para o console.log somente quando sai desse loop
     }                      //sendo [n-1, (n-1)-1... 0] e imprime como um pop de uma array
-
     
     //Exercício 3
     //CONTAGEM DE A ATÉ B – dados os inteiros a e b, realize a contagem progressiva de a até b.
