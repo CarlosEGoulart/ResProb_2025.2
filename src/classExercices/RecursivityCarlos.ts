@@ -66,7 +66,8 @@ export default class Recursivity {
         if(n <= 1){
             return 1;
         }
-        return(n * this.factorial(n -1));
+
+        return(n * this.factorial(n - 1));
     }
 
     //Exercício 7
@@ -75,6 +76,7 @@ export default class Recursivity {
         if(expo == 0){
             return 1;
         }
+
         return(base * this.power(base, expo - 1));
     }
 
@@ -83,13 +85,24 @@ export default class Recursivity {
     //os dois primeiros termos desta série são 1 e 1 e os demais são gerados a partir da soma dos
     //anteriores: 1 1 2 3 5 8 13 21...
     public fibonacci(n: number):number{
-        return 0;
+        if(n < 2){
+            return 1;
+        }
+        return(this.fibonacci(n - 1));
+    } 
+    
+    // Exercício 9
+    // TRIBONACCI – Este exercício é uma mera progressão do anterior. Dado um inteiro positivo n,
+    // imprima o n-ésimo termo da série de Tribonacci. Saiba que os três primeiros termos desta série são
+    // 1, 1 e 2; e os demais são gerados a partir da soma dos anteriores: 1 1 2 4 7 13 24 44...
+    public triboacci(n:number):number{
+        if(n < 2){
+            return 1;
+        }
+        return(n * this.triboacci(n))
+    }
+    
 
-
-
-
-        
-    }  
 }
 
 let test = new Recursivity();

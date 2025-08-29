@@ -74,10 +74,20 @@ class Recursivity {
     //os dois primeiros termos desta série são 1 e 1 e os demais são gerados a partir da soma dos
     //anteriores: 1 1 2 3 5 8 13 21...
     fibonacci(n) {
-        if (n <= 2) {
+        if (n < 2) {
             return 1;
         }
-        return (1 + this.fibonacci(n - 1));
+        return (this.fibonacci(n - 1));
+    }
+    // Exercício 9
+    // TRIBONACCI – Este exercício é uma mera progressão do anterior. Dado um inteiro positivo n,
+    // imprima o n-ésimo termo da série de Tribonacci. Saiba que os três primeiros termos desta série são
+    // 1, 1 e 2; e os demais são gerados a partir da soma dos anteriores: 1 1 2 4 7 13 24 44...
+    triboacci(n) {
+        if (n < 2) {
+            return 1;
+        }
+        return (n * this.triboacci(n));
     }
 }
 exports.default = Recursivity;
