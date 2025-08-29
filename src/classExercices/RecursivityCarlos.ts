@@ -83,11 +83,7 @@ export default class Recursivity {
     //os dois primeiros termos desta série são 1 e 1 e os demais são gerados a partir da soma dos
     //anteriores: 1 1 2 3 5 8 13 21...
     public fibonacci(n: number):number{
-        if(n <= 2){
-            return 1;
-        }
-
-        return( + this.fibonacci(n - 1));
+        return 0;
     }  
 }
 
