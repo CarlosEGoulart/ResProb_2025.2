@@ -84,6 +84,9 @@ export default class Recursivity {
     //anteriores: 1 1 2 3 5 8 13 21...
     public fibonacci(n: number):number{
         return 0;
+
+
+        
     }  
 }
 
