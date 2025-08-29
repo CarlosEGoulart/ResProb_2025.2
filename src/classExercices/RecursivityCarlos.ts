@@ -88,12 +88,7 @@ export default class Recursivity {
         }
 
         return( + this.fibonacci(n - 1));
-    }
-
-
-
-
-    
+    }  
 }
 
 let test = new Recursivity();
