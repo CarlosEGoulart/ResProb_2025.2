@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.number = number;
+exports.number = void 0;
 function number(busStops) {
     // Your Code
     var still = 0;
@@ -12,3 +12,4 @@ function number(busStops) {
     }
     return still;
 }
+exports.number = number;

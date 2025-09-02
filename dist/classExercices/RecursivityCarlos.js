@@ -52,7 +52,7 @@ class Recursivity {
         return a + this.sumInterval(a + 1, b);
     }
     //Exercício 6
-    //FATORIAL – Dado um inteiro n, retorne n!.
+    //FATORIAL – Dado um inn a function that uses tail recuteiro n, retorne n!.
     //Use a mesma classe para os exercícios 7, 8, 9 e 10.
     factorial(n) {
         if (n <= 1) {
@@ -117,10 +117,13 @@ class Recursivity {
     // matriz. Caso não haja ocorrência, retorne -1.
     // Use a mesma classe para os próximos exercícios.
     firstOccurrence(n, array) {
-        if (array.includes(n) == false) {
+        if (!array.includes(n)) {
             return -1;
         }
-        return this.firstOccurrence(n, array.slice(1));
+        if (array[0] == n) {
+            return 0;
+        }
+        return 1 + this.firstOccurrence(n, array.slice(1));
     }
 }
 exports.default = Recursivity;
@@ -135,4 +138,4 @@ let test = new Recursivity();
 // console.log(test.fibonacci(8));
 // console.log(test.tribonacci(6));
 // console.log(test.tetranacci(6));
-console.log(test.firstOccurrence(5, [4, 9, 5, 8, 7, 6, 3, 21, 35, 369, 35, 248, 328, 7, 956, 5, 3, 2, 1, 7]));
+console.log(test.firstOccurrence(3, [4, 9, 5, 8, 7, 6, 3, 21, 35, 369, 35, 248, 328, 7, 956, 5, 3, 2, 1, 7]));
