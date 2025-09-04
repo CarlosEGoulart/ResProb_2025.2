@@ -159,23 +159,48 @@ class Recursivity {
         if (!array.includes(n)) {
             return 0;
         }
+        if (array[0] == n) {
+            return 1 + this.occurrenceNumber(n, array.slice(1));
+        }
         return this.occurrenceNumber(n, array.slice(1));
+    }
+    // Exercício 16
+    // ESTÁ ORDENADO – Considere a mesma matriz unidimensional, não ordenada. Retorne se a matriz
+    // unidimensional está em ordem crescente. Verifique recursivamente.
+    isOrden(array) {
+        if (array.length <= 1) {
+            return true;
+        }
+        if (array[0] > array[1]) {
+            return false;
+        }
+        return this.isOrden(array.slice(1));
+    }
+    //Exercício Bonus
+    //Dado uma string, retorne a string ao contrario recursivamente
+    reverseString(string) {
+        if (string.length <= 1) {
+            return string;
+        }
+        return string[string.length - 1] + this.reverseString(string.slice(0, -1));
     }
 }
 exports.default = Recursivity;
 let test = new Recursivity();
-// test.message(2);
-// test.count(2);
-// test.countAToB(1, 3);
-// console.log(test.sumInterval(1, 5));
-// console.log(test.sumIntervalEnhanced(5, 1));
-// console.log(test.factorial(8));
-// console.log(test.power(2, 3));
-// console.log(test.fibonacci(8));
-// console.log(test.tribonacci(6));
-// console.log(test.tetranacci(6));
+test.message(2);
+test.count(2);
+test.countAToB(1, 3);
+console.log(test.sumInterval(1, 5));
+console.log(test.sumIntervalEnhanced(5, 1));
+console.log(test.factorial(8));
+console.log(test.power(2, 3));
+console.log(test.fibonacci(8));
+console.log(test.tribonacci(6));
+console.log(test.tetranacci(6));
 console.log(test.firstOccurrence(3, [4, 9, 5, 8, 7, 6, 3, 21, 35, 369, 35, 248, 328, 7, 956, 5, 3, 2, 1, 7]));
 console.log(test.ordenFirstOccurrence(8, [1, 2, 3, 3, 4, 5, 5, 6, 7, 7, 7, 8, 9, 21, 35, 35, 248, 328, 369, 956]));
 console.log(test.biggestElement([4, 9, 5, 8, 7, 6, 3, 21, 35, 369, 35, 248, 328, 7, 956, 5, 3, 2, 1, 7]));
 console.log(test.elementSum([4, 9, 5, 8, 7, 6, 3, 21, 35, 369, 35, 248, 328, 7, 956, 5, 3, 2, 1, 7]));
 console.log(test.occurrenceNumber(3, [4, 9, 5, 8, 7, 6, 3, 21, 35, 369, 35, 248, 328, 7, 956, 5, 3, 2, 1, 7]));
+console.log(test.isOrden([1, 2, 3, 3, 4, 5, 5, 6, 7, 7, 7, 8, 9, 21, 35, 35, 248, 328, 369, 956]));
+console.log(test.reverseString("julia"));
