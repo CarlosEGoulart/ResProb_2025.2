@@ -152,6 +152,67 @@ export default class Recursivity {
 
     return 1 + this.firstOccurrence(n, array.slice(1));
   }
+
+  // Exercício 12
+  // PRIMEIRA OCORRÊNCIA ORDENADO – Idem ao anterior, mas suponha que a matriz
+  // unidimensional esteja ordenada. Preze pela eficiência.
+  public ordenFirstOccurrence(n: number, array: number[]): number {
+    if (!array.includes(n)) {
+      return -1;
+    }
+
+    return( 1 + this.ordenFirstOccurrence(n, array.splice(1)));
+  }
+
+  // Exercício 13
+  // MAIOR ELEMENTO – Considere a mesma matriz unidimensional, não ordenada. Retorne
+  // recursivamente o maior elemento.
+  public biggestElement(array: number[]): number{
+    if (array[0] == Math.max(...array)){
+      return array[0];
+    }
+
+    return Math.max(array[0], this.biggestElement(array.slice(1)));
+  }
+
+  // Exercício 14
+  // SOMA DOS ELEMENTOS – Considere a mesma matriz unidimensional, não ordenada. Retorne
+  // recursivamente soma dos elementos.
+  public elementSum(array: number[]): number{
+    if (array.length == 0){
+      return 0;
+    }
+
+    return array[0] + this.elementSum(array.slice(1));
+  }
+
+  // Exercício 15
+  // NÚMERO DE OCORRÊNCIAS – Considere a mesma matriz unidimensional, não ordenada. Dado um
+  // inteiro, retorne recursivamente quantas ocorrências deste há na matriz.
+  public occurrenceNumber(n: number, array: number[]): number{
+    if (!array.includes(n)){
+      return 0;
+    }
+
+    return 1;
+  }
+
+  // Exercício 16
+  // ESTÁ ORDENADO – Considere a mesma matriz unidimensional, não ordenada. Retorne se a matriz
+  // unidimensional está em ordem crescente. Verifique recursivamente.
+  public isOrden(array: number[]):boolean{
+    return true;
+  }
+
+
+  //Exercício Bonus
+  //Dado uma string, retorne a string ao contrario recursivamente
+  public reverseString(string: string): string{
+    return "a";
+  }
+
+
+
 }
 
 let test = new Recursivity();
@@ -171,3 +232,15 @@ console.log(
     [4, 9, 5, 8, 7, 6, 3, 21, 35, 369, 35, 248, 328, 7, 956, 5, 3, 2, 1, 7]
   )
 );
+console.log(
+  test.ordenFirstOccurrence(
+    8,
+    [1, 2, 3, 3, 4, 5, 5, 6, 7, 7, 7, 8, 9, 21, 35, 35, 248, 328, 369, 956]
+  )
+);
+
+console.log(test.biggestElement([4, 9, 5, 8, 7, 6, 3, 21, 35, 369, 35, 248, 328, 7, 956, 5, 3, 2, 1, 7]));
+
+console.log(test.elementSum([4, 9, 5, 8, 7, 6, 3, 21, 35, 369, 35, 248, 328, 7, 956, 5, 3, 2, 1, 7]));
+
+console.log(test.occurrenceNumber(3, [4, 9, 5, 8, 7, 6, 3, 21, 35, 369, 35, 248, 328, 7, 956, 5, 3, 2, 1, 7]));
