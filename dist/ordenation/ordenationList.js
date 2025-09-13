@@ -36,6 +36,7 @@ class OrdenationList {
         }
         console.log(`Maior Valor: ${maior}`);
     }
+    selectionSort(array) { }
 }
 exports.default = OrdenationList;
 let test = new OrdenationList(5, 2, 3);
