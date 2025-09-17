@@ -125,8 +125,30 @@ class Growing {
         }
         return this.array;
     }
+    gnomeSort() {
+        let count = 0;
+        while (count < this.array.length) {
+            if (count === 0 || this.array[count - 1] <= this.array[count]) {
+                count++;
+            }
+            else {
+                let aux = this.array[count];
+                this.array[count] = this.array[count - 1];
+                this.array[count - 1] = aux;
+                count--;
+            }
+        }
+        return this.array;
+    }
+    recSelection() {
+        this.recSelectionAux();
+    }
+    recSelectionAux() {
+    }
 }
 let growtest = new Growing([12, 13, 14, 15, 16, 17, 18, 19, 20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 11]);
-console.log(growtest.verify());
-console.log(growtest.betterBubble());
-console.log(growtest.randomise());
+// console.log(growtest.verify());
+// console.log(growtest.betterBubble());
+// console.log(growtest.randomise());
+//console.log(growtest.gnomeSort())
+console.log(growtest.recSelection());
