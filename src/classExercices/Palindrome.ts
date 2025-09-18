@@ -8,19 +8,16 @@ export default class Palindrome {
     this.word = word;
   }
 
-  public isPalindrome(
-    a: number = 0,
-    b: number = this.word.length - 1
-  ): boolean {
-    if (this.word[a] !== this.word[b]) {
+  public isPalindrome(): boolean {
+    if (this.word[0] !== this.word[this.word.length - 1]) {
       return false;
     }
 
-    if (a >= b) {
+    if (this.word.length <= 1) {
       return true;
     }
 
-    return this.isPalindrome(a + 1, b - 1);
+    return this.isPalindrome();
   }
 }
 

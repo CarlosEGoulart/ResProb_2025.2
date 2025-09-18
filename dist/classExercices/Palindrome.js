@@ -7,14 +7,14 @@ class Palindrome {
         this.word = '';
         this.word = word;
     }
-    isPalindrome(a = 0, b = this.word.length - 1) {
-        if (this.word[a] !== this.word[b]) {
+    isPalindrome() {
+        if (this.word[0] !== this.word[this.word.length - 1]) {
             return false;
         }
-        if (a >= b) {
+        if (this.word.length <= 1) {
             return true;
         }
-        return this.isPalindrome(a + 1, b - 1);
+        return this.isPalindrome();
     }
 }
 exports.default = Palindrome;

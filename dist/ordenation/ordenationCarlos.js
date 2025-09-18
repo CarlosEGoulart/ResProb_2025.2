@@ -143,12 +143,46 @@ class Growing {
     recSelection() {
         this.recSelectionAux();
     }
-    recSelectionAux() {
+    recSelectionAux(i = 0) {
+        if (i >= this.array.length) {
+            //console.log(this.array)
+            return;
+        }
+        for (let j = i; j < this.array.length; j++) {
+            if (this.array[i] > this.array[j]) {
+                let aux = this.array[i];
+                this.array[i] = this.array[j];
+                this.array[j] = aux;
+            }
+        }
+        this.recSelectionAux(i + 1);
+    }
+    closerExt(n) {
+        this.recSelection();
+        if (!this.array.includes(n)) {
+            return -1;
+        }
+        if (this.array.findIndex(item => item === n) > this.array.length / 2) {
+            for (let i = this.array.length - 1; i > 0; i--) {
+                if (this.array[i] == n) {
+                    return this.array[i];
+                }
+            }
+        }
+        for (let i = 0; i < this.array.length - 1; i++) {
+            if (this.array[i] == n) {
+                return this.array[i];
+            }
+        }
+        return -1;
     }
 }
-let growtest = new Growing([12, 13, 14, 15, 16, 17, 18, 19, 20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 11]);
+//let growtest = new Growing([12, 13, 14, 15, 16, 17, 18, 19, 20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 11]);
 // console.log(growtest.verify());
 // console.log(growtest.betterBubble());
 // console.log(growtest.randomise());
-//console.log(growtest.gnomeSort())
-console.log(growtest.recSelection());
+// console.log(growtest.gnomeSort())
+//growtest.recSelection()
+//console.log(growtest.closerExt(20));
+class megaSena {
+}

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.rps = rps;
+exports.rps = void 0;
 function rps(p1, p2) {
     if (p1 === p2) {
         return "Draw!";
@@ -14,3 +14,4 @@ function rps(p1, p2) {
     }
     return "Player 2 won!";
 }
+exports.rps = rps;
