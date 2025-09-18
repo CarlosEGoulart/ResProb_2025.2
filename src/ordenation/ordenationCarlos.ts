@@ -230,9 +230,39 @@ class Growing{
 
 
 class megaSena{
+    public bet: number[];
 
+    constructor(bet: number[]){
+        this.bet = bet;
+    }
+
+    public getDraw():number[]{
+        let draw: number[] = [];
+        
+        while(draw.length < 6){
+            let randomNumber = Math.floor(Math.random() * 60);
+            if(!draw.includes(randomNumber)){
+                draw.push(randomNumber);
+            }
+        }
+        return draw;
+    }
+
+    public match():number{
+        let match: number = 0;
+        let draw = this.getDraw();
+
+        for(let i = 0; i < this.bet.length; i++){
+            if(draw.includes(this.bet[i])){
+                match++;
+            }
+        }
+
+        return match;
+    }
 
 }
 
-
-
+let testMega = new megaSena([27, 51, 11, 18, 35, 25]);
+console.log(testMega.getDraw());
+console.log(testMega.match());
