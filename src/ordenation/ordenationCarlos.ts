@@ -176,11 +176,25 @@ class Growing{
     }
 
     public recSelection(){
-        this.recSelectionAux()
+      this.recSelectionAux()
     }
 
-    private recSelectionAux(){
+    private recSelectionAux(i: number = 0){
+        let aux = 0
+        
+        if(i >= this.array.length){
+           console.log(this.array)
+           return
+        }
 
+        for(let j = i; j < this.array.length; j++){
+            if(this.array[i] > this.array[j]){
+                aux = this.array[i]
+                this.array[i] = this.array[j]
+                this.array[j] = aux
+            }
+        }
+        this.recSelectionAux(i + 1)
     }
 }
 
@@ -188,8 +202,9 @@ let growtest = new Growing([12, 13, 14, 15, 16, 17, 18, 19, 20, 10, 9, 8, 7, 6, 
 // console.log(growtest.verify());
 // console.log(growtest.betterBubble());
 // console.log(growtest.randomise());
-//console.log(growtest.gnomeSort())
-console.log(growtest.recSelection())
+// console.log(growtest.gnomeSort())
+
+growtest.recSelection()
 
 
 
