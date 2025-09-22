@@ -263,6 +263,45 @@ class megaSena{
 
 }
 
-let testMega = new megaSena([27, 51, 11, 18, 35, 25]);
-console.log(testMega.getDraw());
-console.log(testMega.match());
+// let testMega = new megaSena([27, 51, 11, 18, 35, 25]);
+// console.log(testMega.getDraw());
+// console.log(testMega.match());
+
+
+class bingo{
+    public array: number[] = [];
+
+    constructor(array: number[]){
+        this.array = array;
+    }
+
+    public numBingo(): number[]{
+        let count = 0;
+        this.array = []
+
+        while(count < 25){
+            let random = Math.floor((Math.random() * 50) + 1)
+            if(!this.array.includes(random)){
+                this.array.push(random);
+                count ++;
+            }
+        }
+        return this.array;
+    }
+
+    public toString():string{
+        this.numBingo()
+        let formatStr: string = "B  I  N  G  O\n";
+
+        for(let i = 0; i < this.array.length; i++){
+            formatStr += (this.array[i] < 10 ? ' ' : '') + this.array[i] + " ";
+            if((i + 1) % 5 == 0){
+                formatStr += "\n";
+            }
+        }
+        return formatStr;
+    }
+}
+
+let testBingo = new bingo([])
+console.log(testBingo.toString());
