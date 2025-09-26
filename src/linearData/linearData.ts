@@ -17,22 +17,32 @@ export default class LinearData {
           return false;
         }
         pilha.push(char);
-      } else if (char === '[') {
+      } 
+      
+      else if (char === '[') {
         if (pilha.length === 0 || pilha[pilha.length - 1] !== '{') {
           return false;
         }
         pilha.push(char);
-      } else if (char === '(') {
+      } 
+      
+      else if (char === '(') {
         pilha.push(char);
-      } else if (char === ')') {
+      } 
+      
+      else if (char === ')') {
         if (pilha.pop() !== '(') {
           return false;
         }
-      } else if (char === ']') {
+      } 
+      
+      else if (char === ']') {
         if (pilha.pop() !== '[') {
           return false;
         }
-      } else if (char === '}') {
+      } 
+      
+      else if (char === '}') {
         if (pilha.pop() !== '{') {
           return false;
         }
