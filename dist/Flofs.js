@@ -1,6 +1,7 @@
 "use strict";
 //Carlos Eduardo Goulart Oliveira
 //Nicolas Siqueira Moraes
+Object.defineProperty(exports, "__esModule", { value: true });
 class Flofs {
     constructor(queue) {
         this.queue = [];
@@ -40,3 +41,4 @@ class Flofs {
         return [...this.quickSort(left), pivot, ...this.quickSort(right)];
     }
 }
+exports.default = Flofs;

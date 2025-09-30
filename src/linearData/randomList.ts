@@ -28,35 +28,52 @@ export class RandomList {
 
     return this.arr;
   }
+
+  public average() {
+    let sum: number = 0
+    let minor: number
+
+    for(let i = 0; i < this.arr.length; i++){
+      sum = sum + this.arr[i]
+    }
+    sum = sum / (this.arr.length - 1)
+    console.log("Média: ", sum)
+    minor = this.arr[0]
+
+    for(let j = 1; j < this.arr.length; j++){
+      if(Math.abs(this.arr[j] - sum) < Math.abs(minor - sum)){
+        minor = this.arr[j]
+      }
+    }
+
+    return minor
+  }
   
-  //ERRADO
-  //public closerAverage(){
-  //   let sum: number = 0;
-  //   for(let i = 0; i < this.arr.length; i++){
-  //     sum += this.arr[i];
-  //   }
-  //   let average: number = (sum / this.arr.length);
-  //   let closest: number = 0;
-  //   let aux: number[] = []
+  public reduce(n: number){
+    let newArr: number[] = []
+    for(let i = 0; i < n; i++){
+        newArr.push(this.arr[i])
+    }
+    return newArr
+  }
 
-  //   for(let i = 0; i < this.arr.length; i++){
-  //     aux.push(Math.abs(this.arr[i] - average));
-  //     if(aux[i] < aux[closest]){
-  //       closest = this.arr[i];
-  //     }
+  public reverse(){
+    let reverseArr: number[] = []
 
-  //   }
-
-  //   console.log('Média: ', average)
-  //   return closest;
- //}
+    for(let i = this.arr.length - 1; i >= 0; i--){
+      reverseArr.push(this.arr[i])
+    }
+    return reverseArr
+  }
 
 }
 
-let test = new RandomList([1, 2, 3, 4, 5, 6, 7, 8, 99, 10]);
-console.log(test.toString(3));
-console.log(test.removeMult(5));
+let test = new RandomList([1, 2, 3, 4, 5, 6, 7, 8, 7, 7, 7, 10]);
+// console.log(test.toString(3));
+// console.log(test.removeMult(5));
 //console.log(test.closerAverage());
-
+console.log(test.average())
+console.log(test.reduce(5))
+console.log(test.reverse())
 
 

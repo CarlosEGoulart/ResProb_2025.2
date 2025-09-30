@@ -1,7 +1,7 @@
 //Carlos Eduardo Goulart Oliveira
 //Nicolas Siqueira Moraes
 
-class Flofs {
+export default class Flofs {
     public queue: number[] = []
 
     constructor(queue: number[]) {
