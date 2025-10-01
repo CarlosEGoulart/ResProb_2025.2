@@ -48,6 +48,27 @@ class RandomList {
         }
         return newArr;
     }
+    slice(start, end) {
+        let slicedArray = [];
+        for (let i = start; i < end; i++) {
+            slicedArray.push(this.arr[i]);
+        }
+        return slicedArray;
+    }
+    amplitude() {
+        let bigger = this.arr[0];
+        let minor = bigger;
+        for (let i = 0; i < this.arr.length; i++) {
+            if (this.arr[i] > bigger) {
+                bigger = this.arr[i];
+            }
+            if (this.arr[i] < minor) {
+                minor = this.arr[i];
+            }
+        }
+        let amp = bigger - minor;
+        return amp;
+    }
     reverse() {
         let reverseArr = [];
         for (let i = this.arr.length - 1; i >= 0; i--) {
@@ -57,10 +78,12 @@ class RandomList {
     }
 }
 exports.RandomList = RandomList;
-let test = new RandomList([1, 2, 3, 4, 5, 6, 7, 8, 7, 7, 7, 10]);
+let test = new RandomList([1, 2, 3, 4, 5, 6, 78, 8, 7, 7, 7, 10]);
 // console.log(test.toString(3));
 // console.log(test.removeMult(5));
 //console.log(test.closerAverage());
-console.log(test.average());
-console.log(test.reduce(5));
-console.log(test.reverse());
+//console.log(test.average())
+//console.log(test.reduce(5))
+//console.log(test.reverse())
+console.log(test.slice(2, 5));
+console.log(test.amplitude());
