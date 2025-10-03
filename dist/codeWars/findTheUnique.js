@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.findUniq = findUniq;
+exports.findUniq = void 0;
 function findUniq(arr) {
     for (let i = 0; i < arr.length; i++) {
         if (i === 0) {
@@ -21,3 +21,4 @@ function findUniq(arr) {
     }
     return -1;
 }
+exports.findUniq = findUniq;

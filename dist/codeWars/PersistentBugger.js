@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.persistence = persistence;
+exports.persistence = void 0;
 function persistence(num) {
     // your code here
     let multTimes = 0;
@@ -15,3 +15,4 @@ function persistence(num) {
     }
     return multTimes;
 }
+exports.persistence = persistence;
