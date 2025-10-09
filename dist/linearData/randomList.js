@@ -32,7 +32,7 @@ class RandomList {
             sum = sum + this.arr[i];
         }
         sum = sum / (this.arr.length - 1);
-        console.log("Média: ", sum);
+        console.log('Média: ', sum);
         minor = this.arr[0];
         for (let j = 1; j < this.arr.length; j++) {
             if (Math.abs(this.arr[j] - sum) < Math.abs(minor - sum)) {
@@ -87,3 +87,23 @@ let test = new RandomList([1, 2, 3, 4, 5, 6, 78, 8, 7, 7, 7, 10]);
 //console.log(test.reverse())
 console.log(test.slice(2, 5));
 console.log(test.amplitude());
+// Criamos um array de números
+const numeros = [10, 5, 8, 3, 12, 7];
+// --------------------------
+// slice()
+// --------------------------
+// O método slice NÃO altera o array original.
+// Ele retorna uma cópia de uma parte do array, de acordo com o índice inicial e final (final é exclusivo).
+// Pegando os elementos do índice 1 até o índice 4 (sem incluir o índice 4)
+const parteDoArray = numeros.slice(1, 4);
+console.log('Array original:', numeros); // [10, 5, 8, 3, 12, 7]
+console.log('Resultado do slice:', parteDoArray); // [5, 8, 3]
+// --------------------------
+// sort()
+// --------------------------
+// O método sort() ordena os elementos do array *original*.
+// Por padrão, ele converte tudo em string e ordena em ordem lexicográfica (ex: "10" vem antes de "2").
+// Para números, devemos passar uma função de comparação.
+const numerosOrdenados = [...numeros].sort((a, b) => a - b); // cópia com spread e ordenação numérica crescente
+console.log('Array original ainda o mesmo:', numeros); // [10, 5, 8, 3, 12, 7]
+console.log('Array ordenado:', numerosOrdenados); // [3, 5, 7, 8, 10, 12]
