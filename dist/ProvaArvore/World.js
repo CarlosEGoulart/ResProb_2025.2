@@ -1,4 +1,6 @@
 "use strict";
+//Carlos Eduardo Goulart Oliveira
+//Nicolas Siqueira Moraes
 Object.defineProperty(exports, "__esModule", { value: true });
 class World {
     constructor() {

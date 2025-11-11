@@ -1,3 +1,6 @@
+//Carlos Eduardo Goulart Oliveira
+//Nicolas Siqueira Moraes
+
 import Place from './Place';
 
 export default class World {

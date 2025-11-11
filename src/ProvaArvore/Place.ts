@@ -1,3 +1,6 @@
+//Carlos Eduardo Goulart Oliveira
+//Nicolas Siqueira Moraes
+
 export default class Place {
   private continent: string;
   private country?: string;
